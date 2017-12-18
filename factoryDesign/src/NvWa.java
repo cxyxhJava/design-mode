@@ -1,12 +1,13 @@
-import entity.BlackHuman;
-import entity.YellowHuman;
-import factory.HumanFactory;
+import duoFactory.BlackFactory;
+import duoFactory.YellowFactory;
+import entity.Human;
 
 /**
  * Created by yangxb on 2017/12/14.
  */
 public class NvWa {
 
+/*
     public static void main(String[] args){
         //通过工厂创建,对于使用着来说  不需要知道创建过程,由工厂代劳,解耦
         //扩展性,只需要增加不同的人种,就可以拓展
@@ -26,16 +27,24 @@ public class NvWa {
 
         blackHuman.getColor();
         blackHuman.talk();
-
-
-
-
-
-
-
     }
+*/
 
 
+    public static void main(String[] args){
+        //通过工厂创建,对于使用着来说  不需要知道创建过程,由工厂代劳,解耦
+        //扩展性,只需要增加不同的人种,就可以拓展
+        //基本用法,主类存放基础公共方法,子类实现自己的特有方法
 
+        //创建工厂
+        BlackFactory blackFactory =  new BlackFactory();
+        YellowFactory yellowFactory = new YellowFactory();
+
+        Human blackHunam =  blackFactory.createHuman();
+        Human yellowHuman =  yellowFactory.createHuman();
+
+        blackHunam.getColor();
+        yellowHuman.getColor();
+    }
 
 }
